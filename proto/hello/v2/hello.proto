@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package hello.v2;
+
+service HelloService {
+  rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {}
+  rpc Version (VersionRequest) returns (VersionResponse) {}
+  rpc NewMethod (NewMethodRequest) returns (NewMethodResponse) {}
+}
+
+message SayHelloRequest {
+  string name = 1;
+}
+
+message SayHelloResponse {
+  string message = 1;
+}
+
+message VersionRequest {}
+
+message VersionResponse {
+  int32 version = 1;
+}
+
+message NewMethodRequest {}
+
+message NewMethodResponse {
+  string message = 1;
+}
